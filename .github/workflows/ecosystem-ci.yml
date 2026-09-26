@@ -1,0 +1,17 @@
+name: Ecosystem CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    uses: XASDSdsa/frappe-ecosystem-cicd/.github/workflows/frappe-ci.yml@v1
+    with:
+      python-version: "3.14"
+      node-version: "24"
+      test-command: python -m compileall -q .
